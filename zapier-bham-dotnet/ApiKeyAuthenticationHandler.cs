@@ -16,7 +16,7 @@ namespace zapier_bham_dotnet
     {
         private const string ProblemDetailsContentType = "application/problem+json";
     
-        private const string ApiKeyHeaderName = "x-api-key";
+        private const string ApiKeyHeaderName = "X-API-KEY";
         public ApiKeyAuthenticationHandler(
             IOptionsMonitor<ApiKeyAuthenticationOptions> options,
             ILoggerFactory logger,

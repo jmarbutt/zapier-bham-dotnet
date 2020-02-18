@@ -37,5 +37,21 @@ namespace zapier_bham_dotnet.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        [Route("me")]
+        public MeModel Me()
+        {
+            return new MeModel()
+            {
+                Name = "Jonathan"
+            };
+        }
+
+        public class MeModel
+        {
+            public string Name { get; set; }
+        }
     }
+
+    
 }

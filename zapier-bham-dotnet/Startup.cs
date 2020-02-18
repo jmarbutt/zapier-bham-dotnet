@@ -50,12 +50,12 @@ namespace zapier_bham_dotnet
                 app.UseDeveloperExceptionPage();
             }
             app.UseAuthentication();
-            app.UseAuthorization();
+            
            
             //app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthorization();
            
             app.UseEndpoints(endpoints =>
             {
