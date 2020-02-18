@@ -27,7 +27,15 @@ namespace zapier_bham_dotnet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddControllers();
+
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = ApiKeyAuthenticationOptions.DefaultScheme;
+                    options.DefaultChallengeScheme = ApiKeyAuthenticationOptions.DefaultScheme;
+                })
+                .AddApiKeySupport(options => {});
 
             services.AddDbContext<OrdersDbContext>(options =>
                 options.UseSqlServer(
@@ -41,7 +49,9 @@ namespace zapier_bham_dotnet
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseAuthentication();
+            app.UseAuthorization();
+           
             //app.UseHttpsRedirection();
 
             app.UseRouting();
