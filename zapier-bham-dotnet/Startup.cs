@@ -56,8 +56,7 @@ namespace zapier_bham_dotnet
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
